@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Multi Step Form with Progress Bar using jQuery and CSS3</title>
+  <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="cssfile/style.css">   
+  </head>
+  <body>
+
+    <!-- multistep form -->
+<form id="msform" action="../controller/reservationcontroller.php" method="POST">
+	
+	
+	<!-- fieldsets -->
+	<fieldset>
+		<h2 class="fs-title">برجاء ادخال الفئة العمرية لكى</h2>
+		<div class="sf-radio" align="right">  
+			<label> أقل من 25 عام <input type="radio"  id="radio1" value="1" name="age" data-required="true"><span></span>
+			</label><br>
+			<label>من 25 عام - 40 عام <input type="radio"  id="radio2" value="2" name="age" data-required="true"><span></span>
+			</label><br>
+			<label>فوق 40 عام <input type="radio"  value="3" id="radio3" name="age" data-required="true"><span></span>
+			 </label><br>
+			 
+		</div>
+		<input type="button" name="next" class="next action-button" value="التالى" />
+	</fieldset>
+	
+	<!--25 to 40-->
+	
+	<fieldset>
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+
+		<div class="sf-radio" align="right">
+		<label>هل يوجد تاريخ وراثى لسرطان الثدى او المبايض فقط ؟</label><br>
+			<label> نعم <input type="radio" name="radio25to40Q1" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="radio25to40Q1" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+
+		<input type="button" name="next" class="next action-button" value="التالى" />
+	</fieldset>
+	<!--msh 3ndha tare5 wrasy-->
+	<fieldset>
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+	<div class="sf-radio" align="right">
+		<label>هل يوجد افرازات  دموية من حلمة وآلام ونغز بالثديين وعمرك اعلى من 35 عام؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ1" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="NFHQ1" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+	<div class="sf-radio" align="right">
+		<label>هل يوجد حبة فى  حجم الترمسة تحت الإبط ؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ2" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="NFHQ2" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل اصبت باورام حميدة او تكيسات ؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ3" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="NFHQ3" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل عمرك تحت الاربعين واصبت مسبقا بورم خبيثة وتم شفائه؟</label><br>
+			<label> نعم <input type="radio"name="NFHQ4" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="NFHQ4" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل يوجد حبة فى حجم الترمسة على جدى الثدى؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ5" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="NFHQ5" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل يوجد كتل او كلاكيع صلبة بالثدى او دخول الحلمة او تآكلها او آلم فى ثدى واحد؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ6" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="NFHQ6" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+
+
+		<input type="button" name="next" class="next action-button" value="التالى" />
+	</fieldset>
+	<!--less than 25-->
+	<fieldset >
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+
+		<div class="sf-radio" align="right">
+		<label> هل تشعرى بآلام او نغز بالثدى؟</label><br>
+			<label> نعم <input type="radio" name="lessthan25Q1" value="1"  data-required="true"><span></span>
+			</label>
+			<label> لا <input type="radio" name="lessthan25Q1" value="0" data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label> هل يوجد كلكعة او غدد لبنية بالثدى؟</label><br>
+			<label> نعم <input type="radio" name="lessthan25Q2" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="lessthan25Q2" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label> هل حلمة الثدى تفرز افرازات دموية؟</label><br>
+			<label> نعم <input type="radio" name="lessthan25Q3" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="lessthan25Q3" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+
+		<input type="button" name="next" class="next action-button" value="التالى" />
+	</fieldset>
+	<!--3ndha tare5 wrasy-->
+	<fieldset>
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+		<div class="sf-radio" align="right">
+		<label> تاريخك الوراثى خاص بالام او الجدة او الخالة ؟</label><br>
+			<label> نعم <input type="radio" name="HFHQ1" value="1"  data-required="true"><span></span>
+			</label>
+			<label> لا <input type="radio" name="HFHQ1" value="0" data-required="true"><span></span>
+			</label>
+		</div>
+		<div class="sf-radio" align="right">
+		<label> تاريخك الوراثى خاص بالعم او العمة او الخال؟</label><br>
+			<label> نعم <input type="radio" name="HFHQ2" value="1"  data-required="true"><span></span>
+			</label>
+			<label>لا <input type="radio" name="HFHQ2" value="0"  data-required="true"><span></span>
+			</label>
+		</div>
+
+
+		<input type="button" name="next" class="next action-button" value="التالى" />
+	</fieldset>
+
+
+	<fieldset>
+		<h2 class="fs-title">برجاء ادخال هذه البيانات </h2>
+		<input type="text" name="fname" placeholder="الاسم " />
+		<input type="text" name="lname" placeholder="الرقم القومى" />
+		<input type="text" name="phone" placeholder="رقم الهاتف" />
+
+
+		<input type="submit" name="submit" class="submit action-button" onclick="location.href='../controller/reservationcontroller.php'"
+               value="تم" />
+	</fieldset>
+	<fieldset>
+		<h2 class="fs-title">برجاء ادخال هذه البيانات </h2>
+		<input type="text" name="fname" placeholder="الاسم " />
+		<input type="text" name="lname" placeholder="الرقم القومى" />
+		<input type="text" name="phone" placeholder="رقم الهاتف" />
+
+
+		<input type="submit" name="submit1" class="submit action-button" onclick="location.href='../controller/reservationcontroller.php'"
+			   value="تم" />
+	</fieldset>
+
+</form>
+    
+	
+<script src="jsfile/jquery2.1.3-jquery.min.js"></script>
+<script src="jsfile/jquery.easing.min.js"></script>
+        <script src="jsfile/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

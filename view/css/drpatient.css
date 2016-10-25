@@ -1,0 +1,32 @@
+.glyphicon.glyphicon-star-empty {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-star {
+    font-size: 20px;
+}
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon.glyphicon-search {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon.glyphicon-search  { left:  15px;}
+.right-addon .glyphicon.glyphicon-search { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+#patients.thead{
+    background-color: #9a9b9a;
+    height: 20px;
+    font-size: 20px;
+    color: white;
+    padding:10px;
+}

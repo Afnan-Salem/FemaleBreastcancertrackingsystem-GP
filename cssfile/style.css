@@ -1,0 +1,252 @@
+/*custom font*/
+
+@import url(http://fonts.googleapis.com/earlyaccess/amiri.css);
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+
+
+body {
+background:#204562;
+	font-family: 'Amiri', serif;
+}
+.error
+{
+color:red;
+font-family:verdana, Helvetica;
+}
+/*form styles*/
+#msform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: right;
+	position: relative;
+}
+#msform #first_step, #second_step, #third_step, #fourth_step, #fifth_step, #sixth_step, #seventh_step{
+	background: #fff;
+	border: 0 none;
+	border-radius: 10px;
+	border-top: 5px solid #EA80B0;
+	
+	padding: 20px;
+	
+	--box-sizing: border-box;
+	width: 320px;
+	margin: 0 auto;
+	
+	/*stacking fieldsets above each other*/
+	--position: relative;
+}
+#container {
+    overflow: hidden;
+    
+}
+/*Hide all except first fieldset*/
+#container #first_step, #second_step, #third_step, #fourth_step, #fifth_step, #sixth_step, #seventh_step { display: none; }
+    #container #first_step { display: block; }
+
+
+/*inputs*/
+#msform input, #msform textarea {
+	width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 100%;
+    font-family:'Amiri', serif;
+    padding: 0 20px 0 50px;
+    outline: none;
+	text-align:right;
+}
+
+/*buttons*/
+
+#msform .action-button {
+	width: 100px;
+height: 40px;
+background: #f283c6;
+box-sizing: border-box;
+border-radius: 5px;
+border: 1px solid;
+color: #fff;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 14px;
+font-family:'Amiri', serif;
+text-align:center;
+outline: none;
+cursor: pointer;
+margin-top: 40px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #f283c6;
+}
+/*headings*/
+.fs-title {
+	font-size: 20px;
+	font-family:'Amiri', serif;
+	
+	color: #EA80B0;
+	margin-bottom: 20px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	font-family:'Amiri', serif;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+  .sf-radio,  .sf-check {
+    font-size: 16px;
+	width: 100%;
+	height: auto;
+	padding:  0;
+    color: #9E9C9C;
+}
+ .sf-radio label,  .sf-check label {
+	padding:20px;
+	text-align:right;
+    display: inline-block;
+    margin-right: -22px;
+    font-size: 20px;
+    color: #8E8A8A;
+    line-height: 1em;
+}
+ .sf-radio label input[type=radio],  .sf-check label input[type=checkbox] {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	height: 10px
+}
+ .sf-radio label input[type=radio]+span,  .sf-check label input[type=checkbox]+span {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	text-align: center;
+	vertical-align: top;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ .sf-radio label input[type=radio]+span::after,  .sf-check label input[type=checkbox]+span::after {
+ margin-bottom:10px;
+	content: "";
+	display: inline-block;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 200ms;
+	-moz-transition: all 200ms;
+	-ms-transition: all 200ms;
+	-o-transition: all 200ms;
+	transition: all 200ms
+}
+ .sf-radio label input[type=radio]:focus+span,  .sf-check label input[type=checkbox]:focus+span,  .sf-radio label input[type=radio]:active+span,  .sf-check label input[type=checkbox]:active+span {
+	border: 1px solid #006080;
+}
+.sf-radio label input[type=radio]:checked+span::after,  .sf-check label input[type=checkbox]:checked+span::after {
+	opacity: 1
+}
+ .sf-radio label input[type=radio].error+span,  .sf-check label input[type=checkbox].error+span {
+	border-color: #e2513f;
+	border-width: 2px
+}
+ .sf-radio label input[type=radio]+span {
+	-webkit-border-radius: 5em;
+	-moz-border-radius: 5em;
+	border-radius: 5em;
+
+}
+ .sf-radio label input[type=radio]+span::after {
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	background-color: #006080;
+}
+ .sf-radio label input[type=radio]:checked+span::after {
+	border:solid #fff
+}
+ .sf-check label input[type=checkbox]+span {
+
+	-moz-box-shadow: 0 0 5px #ddd;
+	-webkit-box-shadow: 0 0 5px #ddd;
+	box-shadow: 0 0 5px #ddd
+}
+ .sf-check label input[type=checkbox]+span::after {
+    height: 50%;
+    width: 79%;
+    background-color: transparent;
+    border: 0 solid #2096cd;
+    vertical-align: bottom;
+    -webkit-transform: rotate(-45deg) translate(85%, -107%);
+    -moz-transform: rotate(-45deg) translate(85%, -107%);
+    -ms-transform: rotate(-45deg) translate(85%, -107%);
+    -o-transform: rotate(-45deg) translate(85%, -107%);
+    transform: rotate(-45deg) translate(85%, -107%);
+}
+ .sf-check label input[type=checkbox]:checked+span::after {
+	border-left-width: .2em;
+	border-bottom-width: .2em
+}

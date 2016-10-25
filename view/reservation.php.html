@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Multi Step Form with Progress Bar using jQuery and CSS3</title>
+    <link rel="stylesheet" href="cssfile/style.css">  
+  	   <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+   <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" /> 
+    <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" /> 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/…/3.3.6/css/bootstrap.min.css">
+    <!-- BEGIN: load jquery -->
+    <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
+    <script src="js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui/jquery.ui.accordion.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui/jquery.effects.core.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui/jquery.effects.slide.min.js" type="text/javascript"></script>
+    <!-- END: load jquery -->
+    <!-- BEGIN: load jqplot -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+    <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="js/jqPlot/excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="js/jqPlot/jquery.jqplot.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.barRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.highlighter.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.pointLabels.min.js"></script>
+    <!-- END: load jqplot -->
+    <script src="js/setup.js" type="text/javascript"></script>
+    <script src="jsfile/checks.js" type="text/javascript"></script>
+    <script>
+	function validateForm()
+{
+ 
+if ( document.myform.fname.value == "" )
+{
+alert ( "Please fill in the 'Your Employee Name' box." );
+return false;
+}
+}
+	</script>
+         
+         
+  </head>
+  <body>
+  <div class="container_12">
+        <div class="grid_12 header-repeat">
+            <div id="branding">
+                <!-- logo pic -->
+                <div class="floatright">
+                    <img src="log.jpg" alt="Logo" height="45px" style/>
+                </div>
+				
+							<h2>بهية</h2>
+						</div>
+                
+			
+         </div>
+		 
+			 <div class="clear">
+             </div>
+
+    <!-- multistep form -->
+    <div id="container">
+	<div id="msform">
+
+	
+	<!-- first step -->
+  
+	<div id="first_step">
+		<h2 class="fs-title">برجاء ادخال الفئة العمرية لكى</h2>
+        <div class="sf-radio" align="right">  
+        
+			<label> أقل من 25 عام <input type="radio" id="radio1" value="1" name="age" data-required="true"><span></span> 
+			</label><br>
+			<label>من 25 عام - 40 عام <input type="radio" id="radio2" value="2" name="age" data-required="true"><span></span>
+			</label><br>
+			<label>فوق 40 عام <input type="radio" id="radio3" value="3" name="age" data-required="true"><span></span>
+			 </label><br>
+            
+		</div>
+		<input type="submit" class="next action-button" name="submit_first" id="submit_first" value="التالي" />
+	</div>
+	
+	<!--25 to 40-->
+	
+	<div id="second_step">
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+		<div class="sf-radio" align="right">  
+		<label>هل يوجد تاريخ وراثى لسرطان الثدى او المبايض فقط ؟</label><br>
+			<label> نعم <input type="radio" name="radio25to40Q1" id="y25to40Q1" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="radio25to40Q1" id="n25to40Q1" value="0"  data-required="true"><span></span>
+			</label><br>			
+		</div>
+		
+		<input type="submit" class="next action-button" name="submit_second" id="submit_second" value="التالي" />
+	</div>
+    
+    
+	<!--msh 3ndha tare5 wrasy-->
+	<div id="third_step">
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+           <div class="form">
+    <div class="sf-radio" align="right">  
+		<label>اذا كان عمرك اعلي من 35 عام , هل يوجد افرازات دموية من الحلمة أو آلام ونغز بالثديين ؟  </label><br>
+			<label> نعم <input type="radio" name="NFHQ1" id="NFHQ1y" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="NFHQ1" id="NFHQ1n" value="0"  data-required="true"><span></span>
+			</label><br>
+		</div>
+	<div class="sf-radio" align="right">
+		<label>هل يوجد حبة فى  حجم الترمسة تحت الإبط ؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ2" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="NFHQ2" value="0"  data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل اصبت باورام حميدة او تكيسات ؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ3" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="NFHQ3" value="0"  data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل عمرك تحت الاربعين واصبت مسبقا بورم خبيثة وتم شفائه؟</label><br>
+			<label> نعم <input type="radio"name="NFHQ4" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="NFHQ4" value="0"  data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل يوجد حبة فى حجم الترمسة على جلد الثدى؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ5" id="NFHQ5y" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="NFHQ5" id="NFHQ5n" value="0"  data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label>هل يوجد كتل او كلاكيع صلبة بالثدى او دخول الحلمة او تآكلها او آلم فى ثدى واحد؟</label><br>
+			<label> نعم <input type="radio" name="NFHQ6" id ="NFHQ6y" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="NFHQ6" id ="NFHQ6n" value="0"  data-required="true"><span></span>
+			</label><br>
+            </div>			
+		</div>
+		
+		
+		<input type="submit" class="next action-button" name="submit_third" id="submit_third" value="التالي" />
+	</div>
+    
+    
+	<!--less than 25-->
+	<div id="fourth_step">
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+		<div class="form">
+		<div class="sf-radio" align="right">  
+        
+		<label> هل تشعرى بآلام او نغز بالثدى؟</label><br>
+			<label> نعم <input type="radio" name="lessthan25Q1" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label> لا <input type="radio" name="lessthan25Q1" value="0" data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label> هل يوجد كلكعة او غدد لبنية بالثدى؟</label><br>
+			<label> نعم <input type="radio" name="lessthan25Q2" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="lessthan25Q2" value="0"  data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label> هل حلمة الثدى تفرز افرازات دموية؟</label><br>
+			<label> نعم <input type="radio" name="lessthan25Q3" id="lessthan25Q3y" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="lessthan25Q3" id="lessthan25Q3n" value="0"  data-required="true"><span></span>
+			</label><br>			
+		</div>
+		</div>
+		<input type="submit" class="next action-button" name="submit_fourth" id="submit_fourth" value="التالي" />
+	</div>
+    
+	<!--3ndha tare5 wrasy-->
+	<div id="fifth_step">
+		<h2 class="fs-title">برجاء الاجابة على الاسئلة التالية</h2>
+        <div class="form">
+		<div class="sf-radio" align="right">  
+		<label> تاريخك الوراثى خاص بالام او الجدة او الخالة ؟</label><br>
+			<label> نعم <input type="radio" name="HFHQ1" id ="HFHQ1y" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label> لا <input type="radio" name="HFHQ1" id ="HFHQ1n" value="0" data-required="true"><span></span>
+			</label><br>
+		</div>
+		<div class="sf-radio" align="right">
+		<label> تاريخك الوراثى خاص بالعم او العمة او الخال؟</label><br>
+			<label> نعم <input type="radio" name="HFHQ2" value="1"  data-required="true"><span></span>
+			</label><br>
+			<label>لا <input type="radio" name="HFHQ2" value="0"  data-required="true"><span></span>
+			</label><br>			
+		</div>
+		</div>
+		
+		<input type="submit" class="next action-button" name="submit_fifth" id="submit_fifth" value="التالي" />
+	</div>
+
+
+		  <form action="reservationController.php" method="POST">
+	<div id="sixth_step">
+		<h2 class="fs-title">برجاء ادخال هذه البيانات </h2>
+		<input type="text" name="fname" id="fname" placeholder="الاسم " />
+		<input type="text" name="nnumber" id = "nnumber" placeholder="الرقم القومى"/>
+		<input type="text" name="phone" id="phone" placeholder="رقم الهاتف" />
+
+
+		<input type="submit" class="action-button" name="submit_sixth" id="submit_sixth" value="تم"/>
+		<div id="result"></div>
+
+	</div>
+		</form>
+
+    <div id="seventh_step">
+		<h2 class="fs-title">لا يمكن التسجيل</h2>
+	</div>
+	
+</div>
+</div>
+    </div>
+	
+<script src="jsfile/jquery2.1.3-jquery.min.js"></script>
+<script src="jsfile/jquery.easing.min.js"></script>
+        <script src="jsfile/index.js"></script>
+
+    
+    
+    <div id="site_info" >
+        <p>
+            Copyright <a href="#">Bahya hospital</a>. All Rights Reserved.
+        </p>
+    </div>
+  </body>
+</html>

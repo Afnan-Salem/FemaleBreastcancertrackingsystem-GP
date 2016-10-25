@@ -1,0 +1,27 @@
+.red,.redf
+{
+color: red;
+}
+.green,.greenf
+{
+color: LimeGreen;
+}
+.yellow,.yellowf
+{
+color:yellow
+}
+.redb,.redbf
+{
+color:Tomato 
+}
+.white
+{
+color:white;	
+}
+.red,.green,.yellow
+{
+	position:center;
+	font-size: 1.3em;
+	margin-right: 10px;
+	
+}
